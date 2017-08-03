@@ -18,6 +18,8 @@ end
 group :production do
   gem 'pg'
 end
+#add bootstrap
+gem 'bootstrap-sass'
 # Use Puma as the app server
 #12 factor for Heroku
 gem 'rails_12factor', group: :production
