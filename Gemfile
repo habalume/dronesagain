@@ -4,13 +4,23 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
+# Heroku use this version
+ruby '2.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# # Use sqlite3 as the database for Active Record
+# gem 'sqlite3', group: [:development, :test]
+# #production database
+# gem 'pg', group: :production
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server
+#12 factor for Heroku
+gem 'rails_12factor', group: :production
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
