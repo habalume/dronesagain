@@ -23,6 +23,7 @@ gem 'bootstrap-sass'
 # Use Puma as the app server
 #12 factor for Heroku
 gem 'rails_12factor', group: :production
+gem 'stripe', :git =>'https://github.com/stripe/stripe-ruby'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
